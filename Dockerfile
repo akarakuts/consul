@@ -1,11 +1,11 @@
 FROM consul
 
 # Add Containerpilot and set its configuration
-ENV CONTAINERPILOT_VERSION 2.6.0
+ENV CONTAINERPILOT_VERSION 3.8.0
 ENV CONTAINERPILOT file:///etc/containerpilot.json
 ENV HEALTH_URL http://localhost:8500/ui/
 
-RUN export CONTAINERPILOT_CHECKSUM=c1bcd137fadd26ca2998eec192d04c08f62beb1f \
+RUN export CONTAINERPILOT_CHECKSUM=84642c13683ddae6ccb63386e6160e8cb2439c26 \
     && export archive=containerpilot-${CONTAINERPILOT_VERSION}.tar.gz \
     && curl -Lso /tmp/${archive} \
          "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VERSION}/${archive}" \
